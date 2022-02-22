@@ -19,6 +19,46 @@ You may also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+## Docker 환경조성 1단계
+```
+ docker run -itd --name rtl-tdd-todos -p 3000:3000 node:16.14.0-bullseye
+ docker commit rtl-tdd-todos lunaris4537/ksa:rtl-tdd-todos
+ docker push lunaris4537/ksa:rtl-tdd-todos
+ 
+```
+
+## Docker 환경조성 2단계
+```
+doker container stop rtl-tdd-todos
+ docker pull lunaris4537/ksa:rtl-tdd-todos
+ docker run -itd --rm --name rtl-tdd-todos -p 3000:3000 lunaris4537/ksa:rtl-tdd-todos
+
+```
+
+# Git local config (깃 설정하기)
+```
+git init
+git config --global user.name 'lunaris4537'
+git config --global user.email 'lunaris4537@gmail.com'
+git branch -M main 
+
+```
+## Git remote config
+ID,PW는 윈도우즈 자격증명관리에 등록했다
+```
+git remot add origin URL   (origin 말고 내가 알아볼 수 있는 이름으로해도 ㄱㅊ, URL=깃허브 리포지터리 HTTPS URL)
+ex) git remote add origin https://github.com/MinKi1506/rtl-tdd-todos-repository.git
+
+git push -u origin main
+
+## Available Scripts
+
+
+
+
+
+
+
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
