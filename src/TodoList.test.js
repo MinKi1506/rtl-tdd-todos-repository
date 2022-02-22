@@ -31,4 +31,9 @@ describe('<TodoList />', () => {
         fireEvent.click(getAllByText('삭제')[0]);
         expect(onRemove).toBeCalledWith(sampleTodos[0].id);
     });
+    it('renders two defaults todos', () => {
+        const { getByText } = render(<TodoApp />);
+        getByText('TDD 배우기');
+        getByText('react-testing-library 사용하기');
+    });
 });
