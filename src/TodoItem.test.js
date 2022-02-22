@@ -17,15 +17,18 @@ describe('<TodoItem />', () => {
         const span = getByText(todo.text);
         return { ...utils, span, button };
     };
+
     it('has span and button', () => {
         const { span, button } = setup();
         expect(span).toBeTruthy();
         expect(button).toBeTruthy();
     });
+
     it('does not show line-through on span when done is false', () => {
         const { span } = setup({ todo: { ...sampleTodo, done: false } });
         expect(span).not.toHaveStyle('text-decoration: line-through;');
     });
+
     it('calls onToggle', () => {
         const onToggle = jest.fn();
         const span = setup({ onToggle });
