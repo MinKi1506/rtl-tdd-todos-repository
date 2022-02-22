@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 const TodoItem = ({ todo, onToggle, onRemove }) => {
     const { id, text, done } = todo;

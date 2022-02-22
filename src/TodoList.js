@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoItem from './TOdoItem';
+import TodoItem from './TodoItem';
 
 const TodoList = ({ todos, onToggle, onRemove }) => {
     return (

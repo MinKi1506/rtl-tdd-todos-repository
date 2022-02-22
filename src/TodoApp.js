@@ -29,11 +29,14 @@ const TodoApp = () => {
         },
         [todos]
     );
+    const onToggle = useCallback((id) => {
+        todos.map((todo) => (todo.id === id ? { ...todo, done: !todo.done } : todo));
+    });
 
     return (
         <div>
             <Todoform data-testid="helloworld" onInsert={onInsert} />
-            <TodoList todos={todos} />
+            <TodoList todos={todos} onToggle={onToggle} />
         </div>
     );
 };
