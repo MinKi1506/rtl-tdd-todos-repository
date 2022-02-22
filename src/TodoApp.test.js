@@ -28,4 +28,8 @@ describe('<TodoApp />', () => {
         fireEvent.click(todoText);
         expect(todoText).not.toHaveStyle('text-decoration: line-through;');
     });
+
+    it('remove todo', () => {
+        const { getByText } = render();
+    });
 });
