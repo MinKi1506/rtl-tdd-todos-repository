@@ -1,6 +1,7 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import TodoList from './TodoList';
+import TodoApp from './TodoApp';
 
 describe('<TodoList />', () => {
     const sampleTodos = [

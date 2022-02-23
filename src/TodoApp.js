@@ -31,7 +31,7 @@ const TodoApp = () => {
     );
     const onToggle = useCallback(
         (id) => {
-            todos.map((todo) => (todo.id === id ? { ...todo, done: !todo.done } : todo));
+            setTodos(todos.map((todo) => (todo.id === id ? { ...todo, done: !todo.done } : todo)));
         },
         [todos]
     );

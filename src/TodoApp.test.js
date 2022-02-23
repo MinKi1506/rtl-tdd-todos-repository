@@ -8,11 +8,13 @@ describe('<TodoApp />', () => {
         getByText('등록');
         getByTestId('TodoList');
     });
+
     it('renders Two defaults todos', () => {
         const { getByText } = render(<TodoApp />);
         getByText('TDD 배우기');
-        getByTestId('react-testing-library 사용하기');
+        getByText('react-testing-library 사용하기');
     });
+
     it('create new todo', () => {
         const { getByPlaceholderText, getByText } = render(<TodoApp />);
         fireEvent.change(getByPlaceholderText('할 일을 입력하세요'), {
